@@ -1,0 +1,245 @@
+/**
+ * Code Player - Main Stylesheet
+ * Contains all styling for the code player application
+ */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Container Class */
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Header Class */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.header__title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.header__subtitle {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Controls Class */
+.controls {
+    padding: 20px 30px;
+    background: #f8f9fa;
+    border-bottom: 2px solid #e9ecef;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Button Class */
+.btn {
+    padding: 12px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn--primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn--secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn--secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+}
+
+/* Panels Container Class */
+.panels-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: calc(100vh - 250px);
+    min-height: 600px;
+    gap: 0;
+}
+
+/* Panel Class */
+.panel {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e9ecef;
+    background: #fff;
+    overflow: hidden;
+}
+
+.panel--html {
+    border-right: 2px solid #e9ecef;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.panel--css {
+    border-bottom: 2px solid #e9ecef;
+}
+
+.panel--js {
+    border-right: 2px solid #e9ecef;
+}
+
+.panel--output {
+    background: #f8f9fa;
+}
+
+/* Panel Header Class */
+.panel__header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 15px 20px;
+    border-bottom: 2px solid #dee2e6;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.panel__icon {
+    font-size: 1.3em;
+}
+
+.panel__title {
+    font-size: 1.2em;
+    color: #495057;
+    margin: 0;
+}
+
+/* Panel Editor Class */
+.panel__editor {
+    flex: 1;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    resize: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    background: #ffffff;
+    color: #333;
+    outline: none;
+    overflow-y: auto;
+}
+
+.panel__editor:focus {
+    background: #fafafa;
+}
+
+.panel__editor::-webkit-scrollbar {
+    width: 10px;
+}
+
+.panel__editor::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.panel__editor::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.panel__editor::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Panel Output Class */
+.panel__output {
+    flex: 1;
+    width: 100%;
+    border: none;
+    background: white;
+    overflow: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .panels-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        height: auto;
+        min-height: auto;
+    }
+
+    .panel--html,
+    .panel--css,
+    .panel--js {
+        border-right: none;
+        border-bottom: 2px solid #e9ecef;
+    }
+
+    .panel__editor {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .header__title {
+        font-size: 2em;
+    }
+
+    .controls {
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .panel__header {
+        padding: 12px 15px;
+    }
+
+    .panel__editor {
+        padding: 15px;
+        font-size: 13px;
+    }
+}
+

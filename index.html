@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Player - Live Code Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="header__title">Code Player</h1>
+            <p class="header__subtitle">Live HTML, CSS & JavaScript Editor</p>
+        </header>
+
+        <!-- Control Panel -->
+        <div class="controls">
+            <button class="btn btn--primary" id="runBtn">▶ Run Code</button>
+            <button class="btn btn--secondary" id="clearBtn">Clear All</button>
+            <button class="btn btn--secondary" id="resetBtn">Reset</button>
+        </div>
+
+        <!-- Main Editor Panels -->
+        <div class="panels-container">
+            <!-- HTML Panel -->
+            <div class="panel panel--html">
+                <div class="panel__header">
+                    <span class="panel__icon">📄</span>
+                    <h2 class="panel__title">HTML</h2>
+                </div>
+                <textarea 
+                    class="panel__editor" 
+                    id="htmlEditor" 
+                    placeholder="Enter your HTML code here...">&lt;div class="demo"&gt;
+    &lt;h1&gt;Welcome to Code Player&lt;/h1&gt;
+    &lt;p&gt;Edit the code in any panel to see live updates!&lt;/p&gt;
+    &lt;button id="demoBtn"&gt;Click Me&lt;/button&gt;
+&lt;/div&gt;</textarea>
+            </div>
+
+            <!-- CSS Panel -->
+            <div class="panel panel--css">
+                <div class="panel__header">
+                    <span class="panel__icon">🎨</span>
+                    <h2 class="panel__title">CSS</h2>
+                </div>
+                <textarea 
+                    class="panel__editor" 
+                    id="cssEditor" 
+                    placeholder="Enter your CSS code here...">.demo {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.demo h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.demo p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#demoBtn {
+    padding: 12px 30px;
+    font-size: 1.1em;
+    background: white;
+    color: #667eea;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#demoBtn:hover {
+    transform: scale(1.05);
+}</textarea>
+            </div>
+
+            <!-- JavaScript Panel -->
+            <div class="panel panel--js">
+                <div class="panel__header">
+                    <span class="panel__icon">⚡</span>
+                    <h2 class="panel__title">JavaScript</h2>
+                </div>
+                <textarea 
+                    class="panel__editor" 
+                    id="jsEditor" 
+                    placeholder="Enter your JavaScript code here...">// Demo JavaScript code
+$(document).ready(function() {
+    $('#demoBtn').on('click', function() {
+        alert('Hello from Code Player! 🎉');
+        $(this).text('Clicked!');
+        setTimeout(() => {
+            $(this).text('Click Me');
+        }, 2000);
+    });
+});</textarea>
+            </div>
+
+            <!-- Output Panel -->
+            <div class="panel panel--output">
+                <div class="panel__header">
+                    <span class="panel__icon">🖥️</span>
+                    <h2 class="panel__title">Output</h2>
+                </div>
+                <iframe 
+                    class="panel__output" 
+                    id="outputFrame" 
+                    sandbox="allow-scripts allow-same-origin">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
